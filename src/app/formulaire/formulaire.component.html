@@ -1,0 +1,42 @@
+<form align="center"  [formGroup]="profileForm">
+  
+  <mat-form-field>
+    First Name:
+    <input class="mat-form-field-flex"  type="text" matInput placeholder=""  formControlName="firstName">
+    <mat-error _ngcontent-serverapp-c10="" class="mat-error ng-star-inserted"  >
+      firstName <strong _ngcontent-serverapp-c10="">required</strong></mat-error>
+  </mat-form-field><br>
+  <mat-form-field>
+    Last Name:
+    <input class="mat-form-field-flex" matInput placeholder="" type="text"  formControlName="lastName">
+    <mat-error _ngcontent-serverapp-c10="" class="mat-error ng-star-inserted"  >
+      lastName <strong _ngcontent-serverapp-c10="">required</strong></mat-error>
+  </mat-form-field ><br>
+  <mat-form-field>
+      Email:
+      <input class="mat-form-field-flex" matInput placeholder=""  [class.is-invalid]="Email.invalid && Email.touched" type="email" 
+    formControlName="Email" />
+      <label *ngIf="(Email.invalid && Email.touched) || Email.dirty">
+          <mat-error _ngcontent-serverapp-c10="" class="mat-error ng-star-inserted" 
+           *ngIf="Email.errors?.required" > email <strong _ngcontent-serverapp-c10="">
+
+           required</strong></mat-error>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="Email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+      </label>
+    </mat-form-field><br>
+    <mat-form-field>
+      Password:
+      <input class="mat-form-field-flex" matInput placeholder="" type="password" [class.is-invalid]="Password.invalid && Password.touched"  formControlName="Password">
+      <div *ngIf="(Password.invalid && Password.touched) || Password.dirty">
+        <small *ngIf="Password.errors?.required" class="text-danger"> Password is required</small>
+      <small *ngIf="Password.errors?.pattern" class="text-danger" >
+
+        Must contain at least One Capital Case & One Number!
+      </small>
+      </div>
+    </mat-form-field >
+   
+  </form>
+ 
+  

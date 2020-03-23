@@ -1,0 +1,26 @@
+
+
+
+<div align="center" >Username<input type="text"><br>
+
+ Password<input type="text"><br>
+
+<button type="submit" class="btn btn-info" >Login</button> 
+</div>
+
+<div align="center" class="example-form"  (click)= "color()"  >
+    
+    <mat-form-field   >
+     
+      <input  matInput placeholder="" [ngStyle]="{'background-color':redClicked ?'Red':'White' }">
+
+    </mat-form-field>
+    <button   class="btn btn-success" (click)="redClicked = !redClicked">press</button><br>
+  
+    <mat-form-field   class="input">
+   
+      <input  matInput placeholder="" [ngClass]="{'colGreen': greenClicked}" >
+    </mat-form-field  >
+    <button  class="btn btn-success" (click)="greenClicked = !greenClicked">press</button>
+  </div>
+  
